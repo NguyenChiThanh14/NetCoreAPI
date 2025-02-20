@@ -18,7 +18,6 @@ namespace MvcMovie.Controllers
         {
             // Tính toán điểm tổng kết
             double finalScore = st.CalculateFinalScore();
-
             // Gửi kết quả đến View
             ViewBag.InfoMessage = $"Điểm tổng kết của {st.FullName} là: {finalScore:F2}";
             return View(st);

@@ -1,30 +1,26 @@
 @model MvcMovie.Models.BMIModel
 
 @{
-    ViewData["Title"] = "Tính BMI";
+    ViewData["Title"] = "Tính Chỉ Số BMI";
 }
 
-<h2>Tính chỉ số BMI</h2>
+<h1>@ViewBag.InfoMessage</h1>
 
-<form asp-action="Index" method="post">
-    <div>
-        <label>Cân nặng (kg):</label>
-        <input asp-for="Weight" class="form-control" />
-        <span asp-validation-for="Weight" class="text-danger"></span>
-    </div>
-
-    <div>
-        <label>Chiều cao (m):</label>
-        <input asp-for="Height" class="form-control" />
-        <span asp-validation-for="Height" class="text-danger"></span>
-    </div>
-
+<form method="post" asp-action="Index">
+    <label>Nhập Cân Nặng (kg):</label>
+    <input type="number" name="Weight" value="@Model.Weight" min="1" max="300" step="0.1" required>
+    <span asp-validation-for="Weight" class="text-danger"></span>
+    <br />
+    <label>Nhập Chiều Cao (m):</label>
+    <input type="number" name="Height" value="@Model.Height" min="0.5" max="2.5" step="0.01" required>
+    <span asp-validation-for="Height" class="text-danger"></span>
+    <br />
     <input type="submit" value="Tính BMI">
 </form>
 
-@if (ViewBag.BMI != null)
+
+<!-- Hiển thị kết quả nếu có -->
+@if (Model != null && Model.BMI > 0)
 {
-    <h3>Kết quả:</h3>
-    <p>BMI của bạn: <b>@ViewBag.BMI</b></p>
-    <p>Trạng thái: <b>@ViewBag.Result</b></p>
+    <p>Chỉ số BMI của bạn là: @Model.BMI, Kết quả: @Model.Result</p>
 }
