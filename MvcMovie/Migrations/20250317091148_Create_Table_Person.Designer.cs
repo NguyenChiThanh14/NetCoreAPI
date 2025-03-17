@@ -10,7 +10,7 @@ using MvcMovie.Data;
 namespace MvcMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250228012742_Create_Table_Person")]
+    [Migration("20250317091148_Create_Table_Person")]
     partial class Create_Table_Person
     {
         /// <inheritdoc />
@@ -21,20 +21,19 @@ namespace MvcMovie.Migrations
 
             modelBuilder.Entity("MvcMovie.Models.Person", b =>
                 {
-                    b.Property<string>("PersonId")
+                    b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("PersonId");
+                    b.HasKey("Id");
 
-                    b.ToTable("Persons");
+                    b.ToTable("Person");
                 });
 #pragma warning restore 612, 618
         }

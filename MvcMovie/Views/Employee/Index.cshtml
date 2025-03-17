@@ -1,4 +1,4 @@
-@model IEnumerable<MvcMovie.Models.Person>
+@model IEnumerable<MvcMovie.Models.Employee>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,6 +13,15 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.EmpId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.FullName)
             </th>
             <th>
@@ -24,6 +33,15 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FullName)
             </td>
