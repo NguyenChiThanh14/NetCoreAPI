@@ -10,6 +10,8 @@ using MvcMovie.Models;
 using MvcMovie.Models.Process;
 using System.Data;
 using OfficeOpenXml;
+using X.PagedList;
+using X.PagedList.Extensions;
 
 namespace MvcMovie.Controllers
 {
@@ -23,12 +25,29 @@ namespace MvcMovie.Controllers
             _context = context;
         }
 
+        public async Task<IActionResult> Index(int? page, int? PageSize)
+        {
+            ViewBag.PageSize = new List<SelectListItem>()
+            {
+                new SelectListItem() { Value="3", Text="3"},
+                new SelectListItem() { Value="5", Text="5"},
+                new SelectListItem() { Value="10", Text="10"},
+                new SelectListItem() { Value="15", Text="15"},
+                new SelectListItem() { Value="25", Text="25"},
+                new SelectListItem() { Value="50", Text="50"},
+            };
+            int pagesize = (PageSize ?? 3);
+            ViewBag.psize = pagesize;
+            var model = _context.Person.ToList().ToPagedList(page ?? 1, pagesize);
+            return View(model);
+        }
+
         // GET: Person
-        public async Task<IActionResult> Index()
+        /* public async Task<IActionResult> Index()
         {
             return View(await _context.Person.ToListAsync());
         }
-
+ */
         public IActionResult Download()
         {
             //Name the file when download

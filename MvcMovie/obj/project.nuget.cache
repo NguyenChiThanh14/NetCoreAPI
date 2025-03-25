@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Bh6xgk+o8Z4=",
+  "dgSpecHash": "uLKsndH7gWk=",
   "success": true,
   "projectFilePath": "E:\\Net_core_API\\MvcMovie\\MvcMovie.csproj",
   "expectedPackageFiles": [
@@ -179,7 +179,9 @@
     "C:\\Users\\PHU HUNG\\.nuget\\packages\\system.text.json\\9.0.2\\system.text.json.9.0.2.nupkg.sha512",
     "C:\\Users\\PHU HUNG\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "C:\\Users\\PHU HUNG\\.nuget\\packages\\system.threading.tasks.dataflow\\8.0.0\\system.threading.tasks.dataflow.8.0.0.nupkg.sha512",
-    "C:\\Users\\PHU HUNG\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    "C:\\Users\\PHU HUNG\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\PHU HUNG\\.nuget\\packages\\x.pagedlist\\10.5.7\\x.pagedlist.10.5.7.nupkg.sha512",
+    "C:\\Users\\PHU HUNG\\.nuget\\packages\\x.pagedlist.mvc.core\\10.5.7\\x.pagedlist.mvc.core.10.5.7.nupkg.sha512"
   ],
   "logs": []
 }
