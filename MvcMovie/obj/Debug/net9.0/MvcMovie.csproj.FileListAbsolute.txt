@@ -454,3 +454,7 @@ E:\Net_core_API\MvcMovie\obj\Debug\net9.0\compressed\a3ygkwa5zy-2z0ns9nrw6.gz
 E:\Net_core_API\MvcMovie\obj\Debug\net9.0\compressed\nezrqnk58p-muycvpuwrr.gz
 E:\Net_core_API\MvcMovie\obj\Debug\net9.0\compressed\v0zgfp0y55-87fc7y1x7t.gz
 E:\Net_core_API\MvcMovie\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv21k5csn.gz
+E:\Net_core_API\MvcMovie\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+E:\Net_core_API\MvcMovie\bin\Debug\net9.0\MailKit.dll
+E:\Net_core_API\MvcMovie\bin\Debug\net9.0\MimeKit.dll
+E:\Net_core_API\MvcMovie\bin\Debug\net9.0\Bogus.dll
