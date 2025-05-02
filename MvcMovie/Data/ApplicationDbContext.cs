@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
+using MvcMovie.Models.Entities;
 
 namespace MvcMovie.Data
 {
@@ -32,5 +33,7 @@ namespace MvcMovie.Data
             builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaim");
             builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaim");
         }
+
+public DbSet<MvcMovie.Models.Entities.MemberUnit> MemberUnit { get; set; } = default!;
     }
 }

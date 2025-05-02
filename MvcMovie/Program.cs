@@ -12,9 +12,10 @@ builder.Services.AddOptions();
 var mailSettings = builder.Configuration.GetSection("MailSettings");
 builder.Services.Configure<MailSettings>(mailSettings);
 builder.Services.AddTransient<IEmailSender, SendMailService>();
+builder.Services.AddRazorPages();
 // Add services to the container.
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
-.AddEntityFrameworkStores<ApplicationDbContext>();
+ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+            .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -47,15 +48,15 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.SlidingExpiration = true;
 });
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
-/* builder.Services.AddTransient<EmployeeSeeder>(); */
+builder.Services.AddTransient<EmployeeSeeder>(); 
 var app = builder.Build();
 
-/* using (var scope = app.Services.CreateAsyncScope())
+using (var scope = app.Services.CreateAsyncScope())
 {
     var services = scope.ServiceProvider;
     var seeder = services.GetRequiredService<EmployeeSeeder>();
     seeder.SeedEmployees(1000);
-} */
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
